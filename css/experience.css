@@ -2,7 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SF Pro Display", serif;
+   font-family:
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 @font-face {
@@ -662,4 +666,5 @@ body {
     font-size: 12px;
     margin-top: 30px;
   }
+
 }
