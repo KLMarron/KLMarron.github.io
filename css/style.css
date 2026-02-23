@@ -1442,6 +1442,10 @@ project-badges {
   .contact-text p {
     font-size: 14px;
   }
+  .contact-container{
+    padding-top: 60px;
+  }
+
 
   .send-btn {
     font-size: 15px;
@@ -1749,3 +1753,4 @@ project-badges {
   background: #f5f5dc;
   color: black;
 }
+
