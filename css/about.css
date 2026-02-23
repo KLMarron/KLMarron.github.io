@@ -237,7 +237,7 @@ body {
 
 .about-text p {
   font-size: clamp(18px, 2vw, 20px);
-  line-height: 1.1;
+  line-height: 1.5;
   color: #3D211A;
 }
 
@@ -540,4 +540,5 @@ body {
     margin-top: 30px;
   }
 }
+
 
