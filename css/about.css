@@ -223,7 +223,7 @@ body {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .about-title {
@@ -540,3 +540,4 @@ body {
     margin-top: 30px;
   }
 }
+
