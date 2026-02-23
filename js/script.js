@@ -24,7 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
+  const toolsTrack = document.querySelector('.tools-track');
+  let isPaused = false; 
+ 
+  if (window.innerWidth <= 600) {
+    document.querySelectorAll('.tool-card').forEach(card => {
+      card.addEventListener('click', () => {
+        if (!isPaused) {
+          toolsTrack.style.animationPlayState = 'paused'; 
+          isPaused = true;
+        } else {
+          toolsTrack.style.animationPlayState = 'running'; 
+          isPaused = false;
+        }
+      });
+    });
+  }
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   const logo = preloader.querySelector(".preloader-logo");
@@ -50,6 +65,7 @@ window.addEventListener("load", () => {
 
   }, totalIntroDuration);
 });
+
  const burger = document.querySelector('.burger');
   const nav = document.querySelector('.island-nav');
 
