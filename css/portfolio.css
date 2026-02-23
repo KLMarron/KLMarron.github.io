@@ -615,7 +615,9 @@ body {
   margin-bottom: 12px;
   color: #6F4D38;
   line-height: 1.1;
-  word-break: break-word;
+  white-space: nowrap;    
+  overflow: hidden;       
+  text-overflow: ellipsis; 
 }
 
 .portfolio__description {
@@ -1000,3 +1002,4 @@ body {
     margin-top: 30px;
   }
 }
+
