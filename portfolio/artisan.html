@@ -25,11 +25,10 @@
 
     <header class="island-header">
 
-        <div class="island-logo">
-
+        <a href="index.html" class="island-logo">
             <img src="../images/logo.png" alt="KLM Logo">
             <span>K L M</span>
-        </div>
+        </a>
 
 
         <nav class="island-nav">
@@ -54,7 +53,7 @@
 
     <section class="portfolio-section">
 
-      
+
         <div class="portfolio-hero">
             <h1>KIWI ARTISAN</h1>
             <p>E-Commerce Website Management & Design</p>
@@ -62,13 +61,18 @@
                 <img src="../images/artisan-page.png" alt="Kiwi Artisan">
             </div>
         </div>
-
         <div class="portfolio-story">
-            <button class="story-btn">About the Project</button>
+            <h3>About the Project</h3>
+            <p>
+                A Shopify-based artisan brand focused on improving customer experience and operational accuracy. I
+                streamlined inventory workflows, enhanced marketing automation, and optimized the store structure —
+                driving a 20% increase in conversion rates.
+            </p>
         </div>
 
 
-        
+
+
         <div class="mockups-title">
             <h2>Responsive Device Preview</h2>
             <p>Optimized for desktop, tablet, and mobile experiences.</p>
@@ -102,15 +106,7 @@
 
 
 
-        <div class="story-modal" id="storyModal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>About Kiwi Artisan</h3>
-                <p>
-                    A Shopify-based artisan brand focused on improving customer experience and operational accuracy. I streamlined inventory workflows, enhanced marketing automation, and optimized the store structure — driving a 20% increase in conversion rates.
-                </p>
-            </div>
-        </div>
+
 
 
     </section>
@@ -126,7 +122,7 @@
 
             <div class="footer-brand">
                 <img src="../images/logowhite.png" alt="Logo" class="footer-logo">
-                <p>I elevate brands online.</p>
+              <p>Elevating brands online.</p>
             </div>
 
             <div class="footer-links">
@@ -184,7 +180,7 @@
 
     <script src="../js/portfolio.js"></script>
     <script>
-        
+
         document.addEventListener("DOMContentLoaded", () => {
 
             const storyBtn = document.querySelector('.story-btn');
