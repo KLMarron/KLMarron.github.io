@@ -324,7 +324,7 @@ body {
   .about-image {
     max-width: 250px;
     height: 250px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .about-text {
@@ -758,3 +758,4 @@ body {
     margin-top: 30px;
   }
 }
+
