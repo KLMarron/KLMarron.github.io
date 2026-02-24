@@ -14,7 +14,8 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
 
@@ -58,7 +59,9 @@
     <div class="about-text">
       <h2 class="about-title">About Me</h2>
       <p>I’ve always been curious about the world and how people experience it.</p>
-      <p>When I’m not at my desk, I’m usually planning my next trip. <br> I love traveling — not just for the views, but for the perspective.</p>
+      <p>When I’m not at my desk, I’m usually planning my next trip. </p>
+      <p>I love traveling — not just for the views, but
+        for the perspective.</p>
       <p>Different cultures. Different markets. Different ways people buy, think, and experience brands.</p>
       <p class="highlight">Travel has taught me something powerful:</p>
       <ul>
@@ -66,12 +69,41 @@
         <li>Experience matters.</li>
         <li>First impressions matter.</li>
       </ul>
-      <p>And that’s exactly how I build E-commerce stores.</p>
+      <p>And that’s exactly how I build e-commerce stores.</p>
     </div>
   </section>
 
+  <section class="about-carousel">
+    <div id="carousel">
+      <div class="carousel-item">
+        <img src="images/slovakia.jpg" alt="Bratislava" class="carousel-image">
+        <div class="carousel-text">Bratislava, Slovakia</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Amsterdam-Netherlands.jpg" alt="Amsterdam" class="carousel-image">
+        <div class="carousel-text">Amsterdam, Netherlands</div>
+      </div>
+      <div class="carousel-item">
+       <img src="images/Barcelona-Spain.jpg" alt="Barcelona" class="carousel-image">
+        <div class="carousel-text">Barcelona, Spain</div>
+      </div>
+      <div class="carousel-item">
+       <img src="images/Brussels-Belgium.jpg" alt="Brussels" class="carousel-image">
+        <div class="carousel-text">Brussels, Belgium</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Budapest-Hungary.jpg" alt="Budapest" class="carousel-image">
+        <div class="carousel-text">Budapest, Hungary</div>
+      </div>
+      
+     
+    </div>
+  </section>
+
+
+<!-- 
   <section id="travel-map" class="travel-map-section">
-    <h2 class="about-title">My Travels</h2>
+     <h2 class="about-title">My Travels</h2> 
 
 
     <div class="maps-wrapper">
@@ -91,31 +123,7 @@
     </div>
 
 
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </section> -->
 
 
 
@@ -128,46 +136,46 @@
         <p>Elevating brands online.</p>
       </div>
 
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="experience.html">Experience</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="contact.html">Contact</a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +63 9612189202</p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marronkathleene@gmail.com" target="_blank"
+            class="contact-email">
+            marronkathleene@gmail.com
+          </a>
+
+        </p>
+
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/kathleenejoymarron/" target="_blank" class="icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/KLMarron" target="_blank" class="icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.facebook.com/marronnnn" target="_blank" class="icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/kjoymarron/" target="_blank" class="icon">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
-
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><i class="fas fa-phone"></i> +63 9612189202</p>
-          <p>
-            <i class="fas fa-envelope"></i>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marronkathleene@gmail.com" target="_blank"
-              class="contact-email">
-              marronkathleene@gmail.com
-            </a>
-
-          </p>
-
-
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/kathleenejoymarron/" target="_blank" class="icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/KLMarron" target="_blank" class="icon">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.facebook.com/marronnnn" target="_blank" class="icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/kjoymarron/" target="_blank" class="icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-
-        </div>
-
 
       </div>
+
+
+    </div>
 
     </div>
 
@@ -179,7 +187,40 @@
 
 
 
+
   <script>
+   const items = document.querySelectorAll('.carousel-item');
+let current = 0;
+
+function updateCarousel() {
+  const total = items.length;
+
+  items.forEach((item, i) => {
+    item.className = 'carousel-item'; // reset classes
+
+    // Calculate positions with looping
+    const prevIndex = (current - 1 + total) % total;
+    const nextIndex = (current + 1) % total;
+    const prevLeftIndex = (current - 2 + total) % total;
+    const nextRightIndex = (current + 2) % total;
+
+    if(i === current) item.classList.add('active');
+    else if(i === prevIndex) item.classList.add('prev');
+    else if(i === nextIndex) item.classList.add('next');
+    else if(i === prevLeftIndex) item.classList.add('prev-left');
+    else if(i === nextRightIndex) item.classList.add('next-right');
+  });
+}
+
+updateCarousel();
+
+
+setInterval(() => {
+  current = (current + 1) % items.length; 
+  updateCarousel();
+}, 3000);
+
+
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.island-nav');
 
@@ -197,6 +238,3 @@
 </body>
 
 </html>
-
-
-
