@@ -1,5 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-const items = document.querySelectorAll('.portfolio__item');
+  const items = document.querySelectorAll('.portfolio__item');
 
   const observer = new IntersectionObserver(
     entries => {
@@ -14,8 +15,15 @@ const items = document.querySelectorAll('.portfolio__item');
 
   items.forEach(item => observer.observe(item));
 
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.island-nav');
 
-document.addEventListener("DOMContentLoaded", () => {
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+
   const island = document.querySelector(".island-header");
 
   window.addEventListener("scroll", () => {
@@ -27,10 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       island.style.opacity = "1";
     }
   });
-});
-const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.island-nav');
+  
 
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
+  
+
+});
