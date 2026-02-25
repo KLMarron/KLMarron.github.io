@@ -23,11 +23,10 @@
 
     <header class="island-header">
 
-        <div class="island-logo">
-
+        <a href="index.html" class="island-logo">
             <img src="images/logo.png" alt="KLM Logo">
             <span>K L M</span>
-        </div>
+        </a>
 
 
         <nav class="island-nav">
@@ -61,16 +60,20 @@
             <div class="contact-text">
                 <h2>Got a Project in mind?</h2>
                 <p>Let's work together!</p>
+                <a href="mailto:marronkathleene@gmail.com" class="direct-email-btn">
+                    Reach Out via Email
+                </a>
+
 
                 <div class="contact-social">
-                    <a href="https://www.facebook.com/marronnnn"  target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
                     <a href="https://www.linkedin.com/in/kathleenejoymarron/" target="_blank" class="social-icon">
                         <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/KLMarron" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/marronnnn" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://www.instagram.com/kjoymarron/" target="_blank" class="social-icon">
                         <i class="fab fa-instagram"></i>
@@ -97,6 +100,7 @@
                         <textarea id="message" name="message" rows="5" placeholder="Write your message..."
                             required></textarea>
                     </div>
+                    <input type="hidden" name="bcc_email" value="marronkathleene@gmail.com">
 
                     <button type="submit" class="send-btn">
                         Send <i class="fas fa-paper-plane plane-icon"></i>
@@ -104,7 +108,6 @@
                 </form>
 
             </div>
-
         </div>
     </section>
 
@@ -116,7 +119,7 @@
 
             <div class="footer-brand">
                 <img src="images/logowhite.png" alt="Logo" class="footer-logo">
-                <p>I elevate brands online.</p>
+                <p>Elevating brands online.</p>
             </div>
 
             <div class="footer-links">
@@ -172,14 +175,56 @@
 
 
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        emailjs.init("J9gGPQ-KEEbJOe5AJ"); 
+        emailjs.init("J9gGPQ-KEEbJOe5AJ");
+
     </script>
 
-    <script src="script.js"></script>
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.island-nav');
 
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Sending...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            emailjs.sendForm('service_tu3gaq9', 'template_rao9l6y', this)
+                .then(() => {
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'We will contact you soon.',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+
+                    document.getElementById('contactForm').reset();
+
+                })
+                .catch(() => {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed!',
+                        text: 'Something went wrong. Please try again.'
+                    });
+
+                });
+        });
+    </script>
 </body>
-
 
 </html>
