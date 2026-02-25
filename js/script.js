@@ -1,15 +1,38 @@
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault(); 
+  e.preventDefault();
+
+  Swal.fire({
+    title: 'Sending...',
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
 
   emailjs.sendForm('service_tu3gaq9', 'template_rao9l6y', this)
-    .then(function() {
-      alert("Message sent successfully!");
-      document.getElementById('contactForm').reset(); 
-    }, function(error) {
-      alert("Oops, something went wrong: " + JSON.stringify(error));
+    .then(() => {
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: 'We will contact you soon.',
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      document.getElementById('contactForm').reset();
+
+    })
+    .catch(() => {
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Failed!',
+        text: 'Something went wrong. Please try again.'
+      });
+
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const island = document.querySelector(".island-header");
