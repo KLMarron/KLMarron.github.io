@@ -619,7 +619,6 @@ body {
   overflow: hidden;       
   text-overflow: ellipsis; 
 }
-
 .portfolio__description {
   font-size: 18px;
   line-height: 1.6;
@@ -1002,4 +1001,3 @@ body {
     margin-top: 30px;
   }
 }
-
