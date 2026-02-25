@@ -1310,7 +1310,7 @@ project-badges {
   background: #A07856;
   color: #fff;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 300;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -1385,7 +1385,6 @@ project-badges {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(111,77,56,0.25);
 }
-
 .form-group label {
   display: block;
   margin-bottom: 8px;
@@ -1442,14 +1441,13 @@ project-badges {
   .contact-text h2 {
     font-size: 28px;
   }
-
-  .contact-text p {
-    font-size: 14px;
-  }
   .contact-container{
     padding-top: 60px;
   }
 
+  .contact-text p {
+    font-size: 14px;
+  }
 
   .send-btn {
     font-size: 15px;
@@ -1757,5 +1755,3 @@ project-badges {
   background: #f5f5dc;
   color: black;
 }
-
-
