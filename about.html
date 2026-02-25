@@ -14,7 +14,10 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
@@ -84,24 +87,50 @@
         <div class="carousel-text">Amsterdam, Netherlands</div>
       </div>
       <div class="carousel-item">
-       <img src="images/Barcelona-Spain.jpg" alt="Barcelona" class="carousel-image">
+        <img src="images/Barcelona-Spain.jpg" alt="Barcelona" class="carousel-image">
         <div class="carousel-text">Barcelona, Spain</div>
       </div>
       <div class="carousel-item">
-       <img src="images/Brussels-Belgium.jpg" alt="Brussels" class="carousel-image">
+        <img src="images/Brussels-Belgium.jpg" alt="Brussels" class="carousel-image">
         <div class="carousel-text">Brussels, Belgium</div>
       </div>
       <div class="carousel-item">
         <img src="images/Budapest-Hungary.jpg" alt="Budapest" class="carousel-image">
         <div class="carousel-text">Budapest, Hungary</div>
       </div>
-      
+      <div class="carousel-item">
+        <img src="images/Germany.jpg" alt="Germany" class="carousel-image">
+        <div class="carousel-text">Germany</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Luxembourg.jpg" alt="Luxembourg" class="carousel-image">
+        <div class="carousel-text">Luxembourg</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Phuket-Thailand.jpg" alt="Phuket, Thailand" class="carousel-image">
+        <div class="carousel-text">Phuket, Thailand</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Prague-Czech Republic.jpg" alt="Prague, Czech Republic" class="carousel-image">
+        <div class="carousel-text">Prague, Czech Republic</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Regensburg-Germany.jpg" alt="Regensburg, Germany" class="carousel-image">
+        <div class="carousel-text">Regensburg, Germany</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Rome-Italy.jpg" alt="Rome, Italy" class="carousel-image">
+        <div class="carousel-text">Rome, Italy</div>
+      </div>
      
+
+
+
     </div>
   </section>
 
 
-<!-- 
+  <!-- 
   <section id="travel-map" class="travel-map-section">
      <h2 class="about-title">My Travels</h2> 
 
@@ -189,37 +218,41 @@
 
 
   <script>
-   const items = document.querySelectorAll('.carousel-item');
-let current = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    let current = 0;
 
-function updateCarousel() {
-  const total = items.length;
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        let offset = index - current;
 
-  items.forEach((item, i) => {
-    item.className = 'carousel-item'; // reset classes
+        // Loop logic
+        if (offset < -6) offset += items.length;
+        if (offset > 6) offset -= items.length;
 
-    // Calculate positions with looping
-    const prevIndex = (current - 1 + total) % total;
-    const nextIndex = (current + 1) % total;
-    const prevLeftIndex = (current - 2 + total) % total;
-    const nextRightIndex = (current + 2) % total;
+        let scale = 1 - Math.abs(offset) * 0.15;
+        let brightness = 100 - Math.abs(offset) * 15;
+        let zIndex = 10 - Math.abs(offset);
 
-    if(i === current) item.classList.add('active');
-    else if(i === prevIndex) item.classList.add('prev');
-    else if(i === nextIndex) item.classList.add('next');
-    else if(i === prevLeftIndex) item.classList.add('prev-left');
-    else if(i === nextRightIndex) item.classList.add('next-right');
-  });
-}
+        item.style.transform = `
+      translate(-50%, -50%)
+      translateX(${offset * 150}px)
+      scale(${scale})
+    `;
+        item.style.filter = `brightness(${brightness}%)`;
+        item.style.opacity = Math.abs(offset) > 6 ? 0 : 1;
+        item.style.zIndex = zIndex;
+      });
+    }
 
-updateCarousel();
+    function nextSlide() {
+      current = (current + 1) % items.length;
+      updateCarousel();
+    }
 
+    // Auto slide
+    setInterval(nextSlide, 2500);
 
-setInterval(() => {
-  current = (current + 1) % items.length; 
-  updateCarousel();
-}, 3000);
-
+    updateCarousel();
 
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.island-nav');
