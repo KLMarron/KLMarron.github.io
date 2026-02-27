@@ -115,16 +115,13 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
-
   width: 70%;
   max-width: 1000px;
-
+  min-width: 310px;
   height: 60px;
   justify-content: space-between;
-
   background: #ffff;
   backdrop-filter: blur(12px);
-
   padding: 14px 30px;
   border-radius: 999px;
 
@@ -137,18 +134,13 @@ body {
 }
 
 .island-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-
-
   color: black;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 3px;
+  text-decoration: none;
+  padding-top: 5px;
 }
-
 
 .island-logo img {
   width: 30px;
@@ -203,6 +195,25 @@ body {
 
 .island-header {
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .island-header span {
+    font-size: 12px;
+
+
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .island-header span {
+    font-size: 18px;
+
+  }
+
+  .island-header {
+    padding: 14px 20px;
+  }
 }
 
 /* ================= Portfolio Section ================= */
