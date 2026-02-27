@@ -105,6 +105,7 @@ body {
 
   width: 70%;
   max-width: 1000px;
+  min-width: 320px; 
 
   height: 60px;
   justify-content: space-between;
